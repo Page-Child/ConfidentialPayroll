@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+*.log
+
+# Production
+build/
+dist/
+out/
+
+# Misc
+.DS_Store
+*.pem
+.env*.local
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Next.js
+.next/
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Hardhat
+cache/
+artifacts/
+deployments/
+
+# Contract specific
+contract/cache/
+contract/artifacts/
+contract/deployments/
+contract/fhevmTemp/
+
+# Frontend specific
+frontend/.next/
+frontend/out/
+frontend/.vercel
+
+# Documentation
+resub.md
+

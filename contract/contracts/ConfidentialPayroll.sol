@@ -31,6 +31,7 @@ contract ConfidentialPayroll is ZamaEthereumConfig {
     event AccessRevoked(address indexed employee, address indexed viewer);
     event StatisticsUpdated(uint256 employeeCount);
     
+    /// @notice Constructor that sets the deployer as the admin
     constructor() {
         deployer = msg.sender;
     }

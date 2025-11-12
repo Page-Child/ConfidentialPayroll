@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
 
+// Metadata configuration for the application
 export const metadata: Metadata = {
   title: "Confidential Payroll System - Secure & Private",
   description: "Enterprise-grade encrypted payroll management powered by FHEVM technology",

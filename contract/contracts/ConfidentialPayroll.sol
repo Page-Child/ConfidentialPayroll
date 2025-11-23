@@ -31,7 +31,6 @@ contract ConfidentialPayroll is ZamaEthereumConfig {
     event AccessRevoked(address indexed employee, address indexed viewer);
     event StatisticsUpdated(uint256 employeeCount);
     
-    /// @notice Constructor that sets the deployer as the admin
     constructor() {
         deployer = msg.sender;
     }
@@ -125,7 +124,6 @@ contract ConfidentialPayroll is ZamaEthereumConfig {
     /// @notice Get encrypted average salary
     /// @notice Average can be calculated client-side as totalSalary / employeeCount
     /// @notice This function returns totalSalary and employeeCount for client-side calculation
-    /// @dev Returns both encrypted total and employee count for statistical calculations
     /// @return total The encrypted total salary
     /// @return count The number of employees
     function getAverageSalaryData() external view returns (euint32 total, uint256 count) {

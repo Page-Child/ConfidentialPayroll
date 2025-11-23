@@ -1,6 +1,5 @@
 "use client";
 
-// Hook for interacting with ConfidentialPayroll contract
 import { ethers } from "ethers";
 import {
   RefObject,

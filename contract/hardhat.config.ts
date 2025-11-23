@@ -67,7 +67,6 @@ const config: HardhatUserConfig = {
   },
   solidity: {
     version: "0.8.27",
-    // Solidity compiler settings
     settings: {
       metadata: {
         // Not including the metadata hash

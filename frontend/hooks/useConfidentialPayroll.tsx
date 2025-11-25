@@ -36,15 +36,20 @@ function getConfidentialPayrollByChainId(
     return { abi: ConfidentialPayrollABI.abi };
   }
 
-  const entry =
-    ConfidentialPayrollAddresses[chainId.toString() as keyof typeof ConfidentialPayrollAddresses];
+  const chainIdStr = chainId.toString();
+  type AddressEntry = { address: string; chainId: number; chainName: string };
+  const entry = ConfidentialPayrollAddresses[chainIdStr as keyof typeof ConfidentialPayrollAddresses] as AddressEntry | undefined;
 
-  if (!entry || !("address" in entry) || entry.address === ethers.ZeroAddress) {
+  if (!entry) {
+    return { abi: ConfidentialPayrollABI.abi, chainId };
+  }
+
+  if (!entry.address || entry.address === ethers.ZeroAddress) {
     return { abi: ConfidentialPayrollABI.abi, chainId };
   }
 
   return {
-    address: entry.address as `0x${string}` | undefined,
+    address: entry.address as `0x${string}`,
     chainId: entry.chainId ?? chainId,
     chainName: entry.chainName,
     abi: ConfidentialPayrollABI.abi,
